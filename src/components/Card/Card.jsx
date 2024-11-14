@@ -24,7 +24,7 @@ const Card = () => {
             {noticias.map((data) => (
                 <div
                     key={data.id}
-                    className='bg-gray rounded-xl drop-shadow-lg flex flex-col sm:flex-row items-center justify-start sm:max-w-lg mx-auto'
+                    className='bg-white rounded-xl drop-shadow-lg flex flex-col sm:flex-row items-center justify-start sm:max-w-lg mx-auto'
                 >
                     <img
                         className='w-full sm:w-1/3 sm:h-auto  object-cover rounded-t-xl sm:rounded-l-xl sm:rounded-t-none'
