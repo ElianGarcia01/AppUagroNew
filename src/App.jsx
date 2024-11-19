@@ -6,6 +6,8 @@ import SectionCard from "./components/Card/SectionCard"
 import Fondo from "../src/assets/AppUagroImg/fondo-serv.png"
 import SectionDos from "./components/Section2/SectionDos"
 import SectionTres from "./components/Section3/SectionTres"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 function App() {
 
