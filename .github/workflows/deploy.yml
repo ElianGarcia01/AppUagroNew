@@ -24,7 +24,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           # Agregar el host al archivo known_hosts para evitar el prompt de autenticación SSH
-          ssh-keyscan -t rsa your.server.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa 192.168.140.209 >> ~/.ssh/known_hosts
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
