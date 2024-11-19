@@ -20,7 +20,7 @@ jobs:
       # 2. Configurar las claves SSH
       - name: Set up SSH
         run: |
-          mkdir -p ~/.ssh
+          
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           # Agregar el host al archivo known_hosts para evitar el prompt de autenticación SSH
