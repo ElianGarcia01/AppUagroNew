@@ -1,0 +1,57 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Despliegue automatico de AppUagroNew
+
+on:
+  push:
+    branches:
+      - main  # Puedes cambiar la rama si prefieres otra, como `develop`
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Usamos Ubuntu como entorno para GitHub Actions
+
+    steps:
+      # 1. Hacer checkout del código
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Configurar las claves SSH
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Agregar el host al archivo known_hosts para evitar el prompt de autenticación SSH
+          ssh-keyscan -t rsa your.server.com >> ~/.ssh/known_hosts
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # 3. Instalar dependencias en el contenedor
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      # 4. Crear el build del proyecto con Vite
+      - name: Build the project with Vite
+        run: npm run build
+
+      # 5. Subir el build al servidor a través de SSH
+      - name: Deploy to Server via SSH
+        run: |
+          ssh 192.168.140.209 << 'EOF'
+            # Navegar al directorio del proyecto
+            cd /var/www/html/AppUagroEjemplo
+
+            # Limpiar el directorio 'dist' anterior
+            rm -rf dist/*
+
+            # Copiar el contenido de la carpeta 'dist' desde el repositorio al servidor
+            cp -r ./dist/* /var/www/html/AppUagroEjemplo/dist/
+
+            # Si usas un servidor web como Apache o Nginx, reiniciamos el servicio
+            sudo systemctl restart apache2.service
+          EOF
+
+
