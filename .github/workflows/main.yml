@@ -1,0 +1,28 @@
+name: Despliegue automatizado
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  run-pull:
+    name: run pull
+    runs-on: self-hosted
+
+    steps:
+      - name: executing remote ssh commands using ssh keys
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.WORK_DIR }}
+            git fetch
+            git checkout ${{ secrets.MAIN_BRANCH }}
+            git pull
+            npm install
+            npm run build
+            exit
