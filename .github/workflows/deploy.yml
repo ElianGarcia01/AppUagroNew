@@ -1,0 +1,42 @@
+name: Deploy React + Vite to Production Server
+
+on:
+  push:
+    branches:
+      - main  # O la rama en la que estés trabajando
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Puedes usar el runner que prefieras (ubuntu-latest en este caso)
+
+    steps:
+    # 1. Checkout del código fuente
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # 2. Configura Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'  # La versión de Node.js que prefieras
+
+    # 3. Instalar dependencias
+    - name: Install dependencies
+      run: npm install
+
+    # 4. Construir la aplicación con Vite
+    - name: Build the project
+      run: npm run build
+
+    # 5. Subir el contenido al servidor remoto con SSH (Aquí se usa rsync)
+    - name: Deploy to server
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        
+        # Realiza el despliegue al servidor remoto
+        rsync -avz --delete --exclude='node_modules' --exclude='.git' -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ dgtidweb@192.168.140.209:/var/www/html/AppUagroEjemplo
+
+    # 6. Limpiar la clave privada
+    - name: Clean up private key
+      run: rm -f private_key.pem
