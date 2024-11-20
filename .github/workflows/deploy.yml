@@ -35,7 +35,7 @@ jobs:
         chmod 600 private_key.pem
         
         # Realiza el despliegue al servidor remoto
-        rsync -avz --delete --exclude='node_modules' --exclude='.git' -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ dgtidweb@192.168.140.209:/var/www/html/AppUagroEjemplo
+        rsync -avz --delete --exclude='node_modules' --exclude='.git' -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" ./dist/ root@192.168.140.209:/var/www/html/AppUagroEjemplo
 
     # 6. Limpiar la clave privada
     - name: Clean up private key
