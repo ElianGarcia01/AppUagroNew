@@ -8,7 +8,7 @@ on:
 jobs:
   run-pull:
     name: run pull
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: executing remote ssh commands using ssh keys

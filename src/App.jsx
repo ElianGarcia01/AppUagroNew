@@ -1,5 +1,5 @@
 
-import './App.css'
+import React from "react";
 import Navbar from "./components/Navbar/Navbar"
 import Section1 from "./components/Section1/Section"
 import SectionCard from "./components/Card/SectionCard"
