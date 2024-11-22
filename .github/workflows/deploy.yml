@@ -41,7 +41,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
 
         # Comandos para desplegar directamente en el servidor
-        ssh -o StrictHostKeyChecking=no dtidweb@200.4.136.110 << 'EOF'
+        ssh -o StrictHostKeyChecking=no dtidweb@192.168.140.209 << 'EOF'
           # Navegar al directorio del proyecto
           cd /var/www/html/AppUagroEjemplo/AppUagroNew || exit
 
