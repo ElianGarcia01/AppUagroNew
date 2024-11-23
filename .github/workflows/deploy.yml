@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main  # Ejecutar cuando haya un push en la rama principal
-
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
