@@ -1,6 +1,6 @@
-import Recurso from "../../assets/AppUagroImg/Recurso.png"
-import Celular from "../../assets/AppUagroImg/img-serv2.png"
-import RecursoDos from "../../assets/AppUagroImg/Recurso_2.png"
+import Recurso from "../../assets/images/Recurso.png"
+import Celular from "../../assets/images/img-serv2.png"
+import RecursoDos from "../../assets/images/Recurso_2.png"
 
 function SectionDos() {
     return (
