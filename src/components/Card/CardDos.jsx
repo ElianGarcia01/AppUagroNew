@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 
 
-function CardDos() {
+// function CardDos() {
 
 
-    const [data, setData] = useState(null)
+//     const [data, setData] = useState(null)
 
-    useEffect(() => {
-        fetch("https://uagroapp.uagro.mx/api/noticias/lista/0/7")
-        .then((response) => response.json)
-        .then((data) => setData(data))
-        console.log(data);
+//     useEffect(() => {
+//         fetch("")
+//         .then((response) => response.json)
+//         .then((data) => setData(data))
+//         console.log(data);
         
-    },[])
+//     },[])
 
-    return(
-        <div></div>
-    )
-}
+//     return(
+//         <div></div>
+//     )
+// }
 
-export default CardDos
+// export default CardDos
