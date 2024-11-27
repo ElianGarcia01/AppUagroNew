@@ -1,4 +1,4 @@
-// import Card from "../Card/Card";
+import Card from "../Card/Card"
 
 function SectionCard() {
     return (
@@ -9,7 +9,7 @@ function SectionCard() {
 
                     {/*Codigo principal*/}
 
-                    {/* <Card></Card> */}
+                    <Card></Card>
 
                 </div>
             </div>

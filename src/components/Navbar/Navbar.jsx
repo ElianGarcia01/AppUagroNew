@@ -32,11 +32,10 @@ const Navbar = () => {
 
         <div className="flex items-center">
           <ul className={`hidden md:flex ${isScrolled ? "text-white" : "text-gray-300"}`}>
-            <li>Administracion</li>
-            <li>Manual</li>
-            <li>Video Tutorial</li>
-            <li>Noticias</li>
-            <li>Contacto</li>
+            <li><a href="https://uagroapp.uagro.mx/home">Administracion</a></li>
+            <li><a href="https://uagroapp.uagro.mx/storage/uagroApp/manuales/Manual.pdf">Manual</a></li>
+            <li><a href="https://www.youtube.com/watch?v=z76owU2SOb8">Video Tutorial</a></li>
+            <li><a href="mailto:uagroapp@uagro.mx">Contacto</a></li>
           </ul>
         </div>
 

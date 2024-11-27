@@ -1,4 +1,4 @@
-// import CardDos from "../Card/CardDos";
+import CardDos from "../Card/CardDos"
 
 function SectionTres() {
     return (
@@ -11,7 +11,7 @@ function SectionTres() {
 
                     {/*Codigo principal*/}
 
-                    {/* <CardDos></CardDos> */}
+                    <CardDos></CardDos>
                     
                 </div>
             </div>
