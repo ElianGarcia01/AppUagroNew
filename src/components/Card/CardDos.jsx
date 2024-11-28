@@ -75,7 +75,7 @@ function CardDos() {
                     {data.map(noticia => (
                         <div key={noticia.id} className="bg-white text-black rounded-xl flex flex-col justify-between shadow-md hover:shadow-lg transition-transform transform my-4">
                             <div className="rounded-t-xl flex justify-center items-center">
-                                <img src={"https://uagroapp.uagro.mx/" + noticia.ruta_imagen} alt={noticia.titulo} className="h-80 w-80 object-fill rounded-t-lg rounded-b-md" />
+                                <img src={"https://uagroapp.uagro.mx/" + noticia.ruta_imagen} alt={noticia.titulo} className="h-80 w-96 object-fill rounded-t-lg rounded-b-md" />
                             </div>
                             <div className="flex flex-col justify-between p-4 h-full">
                                 <h3 className="text-xl text-center font-semibold uppercase truncate">{noticia.titulo}</h3>
@@ -84,7 +84,7 @@ function CardDos() {
                                         {noticia.enlace ? <button className="bg-blue-950 text-white text-lg px-8 py-1 rounded-xl text-center mt-4 mx-auto w-full"><a className="text-gray-200 no-underline">Abrir</a></button> : ""}
                                     </div>
                                     <div>
-                                        {noticia.ruta_archivo ? <button className="bg-red-500 text-white text-lg px-6 py-1 rounded-xl text-center mt-4 mx-auto w-full"> <a href={"https://uagroapp.uagro.mx/" + noticia.ruta_archivo} className="text-gray-200 no-underline">Archivo</a></button> : ""}
+                                        {noticia.ruta_archivo ? <button className="bg-red-500 text-white text-lg px-6 py-1 rounded-xl text-center mt-4 mx-auto w-full ms-1"> <a href={"https://uagroapp.uagro.mx/" + noticia.ruta_archivo} className="text-gray-200 no-underline">Archivo</a></button> : ""}
                                     </div>
                                 </div>
                             </div>
