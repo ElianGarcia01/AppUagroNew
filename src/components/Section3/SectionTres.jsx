@@ -5,9 +5,9 @@ function SectionTres() {
         <>
 
         
-        <div className = 'w-full bg-white py-10'>
+        <div className = 'w-full py-10 bg-white'>
             <div className="container mx-auto px-4">
-                <div className='flex justify-center'>
+                <div className='flex justify-center items-center'>
 
                     {/*Codigo principal*/}
 
