@@ -21,7 +21,6 @@ function CardDos() {
     useEffect(() => {
         axios.get("https://uagroapp.uagro.mx/api/noticias/lista/0/37")
             .then((respuesta) => {
-                console.log(respuesta.data)
                 setData(respuesta.data)
             })
             .catch(error => {
