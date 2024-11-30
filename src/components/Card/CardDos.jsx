@@ -9,7 +9,7 @@ function Arrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "block", background: "#1e3a8a" }}
+            style={{ ...style, display: "block", background: "black" }}
             onClick={onClick}
         />
     );
@@ -32,9 +32,9 @@ function CardDos() {
         dots: false,
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         autoplay: true,
-        speed: 1000,
+        speed: 1500,
         autoplaySpeed: 3000,
         cssEase: "linear",
         nextArrow: <Arrow />,
@@ -44,7 +44,7 @@ function CardDos() {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: true
                 }
@@ -72,9 +72,9 @@ function CardDos() {
             <div className="mt-20 w-full m-auto py-4">
                 <Slider {...settings}>
                     {data.map(noticia => (
-                        <div key={noticia.id} className="bg-white text-black rounded-xl flex flex-col justify-between shadow-md hover:shadow-lg transition-transform transform my-4">
+                        <div key={noticia.id} className="bg-white text-black rounded-xl flex flex-col justify-between ">
                             <div className="rounded-t-xl flex justify-center items-center">
-                                <img src={"https://uagroapp.uagro.mx/" + noticia.ruta_imagen} alt={noticia.titulo} className="h-80 w-96 object-fill rounded-t-lg rounded-b-md" />
+                                <img src={"https://uagroapp.uagro.mx/" + noticia.ruta_imagen} alt={noticia.titulo} className="h-[355px] w-[360px] object-fill rounded-t-lg rounded-b-md" />
                             </div>
                             <div className="flex flex-col justify-between p-4 h-full">
                                 <h3 className="text-xl text-center font-semibold uppercase truncate">{noticia.titulo}</h3>
