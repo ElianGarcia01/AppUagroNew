@@ -6,7 +6,7 @@ const Card = () => {
     const [noticias, setNoticias] = useState(null)
 
     useEffect(() => {
-        axios.get("https://dgtidweb.uagro.mx:1337/api/noticias?populate=*")
+        axios.get("http://192.168.140.209:1337/api/noticias?populate=*")
             .then((respuesta) => {
                 console.log(respuesta)
                 setNoticias(respuesta.data.data)
@@ -31,7 +31,7 @@ const Card = () => {
                 >
                     <img
                         className='w-full sm:w-1/3 sm:h-auto  object-cover rounded-t-xl sm:rounded-l-xl sm:rounded-t-none'
-                        src={data.img.url ? `https://dgtidweb.uagro.mx${data.img.url}` : ""}
+                        src={data.img.url ? `http://192.168.140.209${data.img.url}` : ""}
                         alt={data.nombre}
                     />
                     <div className='p-6 sm:w-2/3 w-full'>
