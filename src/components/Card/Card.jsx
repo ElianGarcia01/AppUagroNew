@@ -6,7 +6,7 @@ const Card = () => {
     const [noticias, setNoticias] = useState(null)
 
     useEffect(() => {
-        axios.get("http://192.168.140.209:1337/api/noticias?populate=*")
+        axios.get("https://dgtidweb.uagro.mx/api/noticias?populate=*")
             .then((respuesta) => {
                 console.log(respuesta)
                 setNoticias(respuesta.data.data)
